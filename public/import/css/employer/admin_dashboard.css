@@ -1,0 +1,271 @@
+.tab-menu {
+    display: flex;
+    margin-bottom: 10px;
+}
+.tab-button {
+    padding: 10px 20px;
+    background-color:  #bababa;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    cursor: pointer;
+}
+.tab-button.active {
+    color: white;
+    background-color: #303030;
+    border-bottom: 1px solid #fff;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+.logoProfile {
+    text-align: center; /* Center the icon */
+}
+
+/* Add styles for the .logo i tag */
+.logoProfile img {
+   width:150px; /* Adjust the icon size as needed */
+    margin: 20px auto; /* Adjust margin as needed */
+}
+
+
+
+
+
+.home-content .admin-boxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-bottom: 26px;
+  }
+  
+  .admin-boxes .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 3 - 15px);
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .admin-boxes .admin-boxes .box-topic {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+  .home-content .admin-boxes .box .number {
+    display: inline-block;
+    font-size: 35px;
+    margin-top: -6px;
+    font-weight: 500;
+  }
+  
+  .home-content .admin-boxes .box .indicator {
+    display: flex;
+    align-items: center;
+  }
+  
+  .home-content .admin-boxes .box .indicator i {
+    height: 20px;
+    width: 20px;
+    background: #8fdacb;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+  .box .indicator i.down {
+    background: #e87d88;
+  }
+  
+  .home-content .admin-boxes .box .indicator .text {
+    font-size: 12px;
+  }
+  
+  .home-content .admin-boxes .box .cart {
+    display: inline-block;
+    font-size: 32px;
+    height: 50px;
+    width: 50px;
+    background: #cce5ff;
+    line-height: 50px;
+    text-align: center;
+    color: #66b0ff;
+    border-radius: 12px;
+    margin: -15px 0 0 6px;
+  }
+  
+  .home-content .admin-boxes .box .cart.two {
+    color: #2bd47d;
+    background: #c0f2d8;
+  }
+  
+  .home-content .admin-boxes .box .cart.three {
+    color: #ffc233;
+    background: #ffe8b3;
+  }
+  
+  .home-content .admin-boxes .box .cart.four {
+    color: #e05260;
+    background: #f7d4d7;
+  }
+  .home-content .admin-boxes .box .cart.five {
+    color: #cd8629;
+    background:#f4e3b3;
+  }
+  .home-content .admin-boxes .box .cart.six {
+    color: #d42dd1;
+    background:#fad0f1;
+  }
+  
+  .home-content .admin-boxes .total-order {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .home-content .admin-boxes .sales-boxes {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 1240px) {
+    
+    .home-section {
+      width: calc(100% - 60px);
+      left: 60px;
+    }
+  
+    .home-section nav {
+      width: calc(100% - 60px);
+      left: 60px;
+    }
+  
+  }
+  
+  @media (max-width: 1150px) {
+    .home-content .admin-boxes .sales-boxes {
+      flex-direction: column;
+    }
+  
+    .home-content .admin-boxes .sales-boxes .box {
+      width: 100%;
+      overflow-x: scroll;
+      margin-bottom: 30px;
+    }
+  
+    .home-content .admin-boxes .sales-boxes .top-sales {
+      margin: 0;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .admin-boxes .box {
+      width: calc(100% / 2 - 15px);
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .home-content .admin-boxes .sales-boxes {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .home-content .admin-boxes .sales-boxes .recent-sales {
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+  
+   .dashboard,
+    nav .profile-details .admin_name,
+    nav .profile-details i {
+      display: none;
+    }
+  
+    .home-section nav .profile-details {
+      height: 50px;
+      min-width: 40px;
+    }
+  
+    .home-content .admin-boxes .sales-boxes .sales-details {
+      width: 560px;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    
+  
+  
+    .admin-boxes .box {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  
+  }
+  
+  @media (max-width: 400px) {
+    
+    .home-section {
+      width: 100%;
+      left: 0;
+    }
+  
+  
+    .home-section nav {
+      width: 100%;
+      left: 0;
+    }
+  
+   
+  }
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    border-bottom: none;
+    padding: 5px 0;
+  }
+
+  .row-item {
+    flex: 1 1 100%;
+    margin: 0 10px;
+  }
+  .bold {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+   /* The Modal (background) */
+   .custom-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.custom-modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}

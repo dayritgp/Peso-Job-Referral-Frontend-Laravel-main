@@ -1,0 +1,261 @@
+.wrapper {
+    padding-top: 170px;
+    overflow: hidden;
+    max-width: 500px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Add this line to center the wrapper horizontally */
+  }
+  .wrapper {
+    margin-top: 20px; /* Add space above the form-container */
+    margin-bottom: 20px; /* Add space below the form-container */
+  }
+  
+  
+  .wrapper .title-text {
+    display: flex;
+    width: 200%;
+  }
+  
+  .title.login,
+  .title.signup {
+    display: flex;
+    margin-left: 65px;
+    align-items: center;
+    font-size: 28px;
+    line-height: 1;
+  }
+  
+  .title.login img,
+  .title.signup img {
+    margin-right: 10px;
+    height: 90px;
+  }
+  
+  .checkbox-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .checkbox-container a {
+    text-decoration: none;
+  }
+  
+  .checkbox-container a:hover {
+    color: rgb(21, 16, 125);
+    text-decoration: underline;
+  }
+  
+  .checkbox-container label {
+    font-size: 16px;
+  }
+  
+  .password-field {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  #login:checked ~ label.signup {
+    color: #000;
+  }
+  
+  #login:checked ~ label.login {
+    cursor: default;
+    user-select: none;
+  }
+  
+  .wrapper .form-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .form-container .form-inner {
+    display: flex;
+    width: 200%;
+  }
+  
+  .form-container .form-inner form {
+    width: 50%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .form-inner form .field {
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .form-inner form .field input,
+  .form-inner form .field select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+  }
+  
+  .form-inner form .field input:focus,
+  .form-inner form .field select:focus {
+    border-color: #171c26;
+  }
+  
+  .form-inner form .field input::placeholder,
+  .form-inner form .field select::placeholder {
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  
+  form .field input:focus::placeholder {
+    color: #b3b3b3;
+  }
+  
+  .radioclass {
+    margin-top: 20px;
+  }
+  
+  .radioclass input[type="radio"] {
+    display: none;
+  }
+  
+  .radioclass input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .radioclass input[type="radio"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+  .radioclass input[type="radio"]:checked + label:before {
+    background-color: #171c26;
+  }
+  
+  .form-inner form .pass-link {
+    margin-top: 5px;
+  }
+  
+  .form-inner form .signup-link {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .form-inner form .pass-link a,
+  .form-inner form .signup-link a {
+    color: #171c26;
+    text-decoration: none;
+  }
+  
+  .form-inner form .pass-link a:hover,
+  .form-inner form .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  form .btn {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  form .btn .btn-layer {
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: -webkit-linear-gradient(right, #171c26, #26358b, #171c26, #26358b);
+    border-radius: 5px;
+    transition: all 0.4s ease;;
+  }
+  
+  form .btn:hover .btn-layer {
+    left: 0;
+  }
+  
+  form .btn input[type="submit"] {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+
+
+
+  /* CSS for the modal */
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    z-index: 1000; /* Ensure the modal appears above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  }
+  .modal-open {
+    overflow: hidden; /* Disable scrolling on the body when modal is open */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Center the modal vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,57 @@
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px; /* Increased padding */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .update-btn {
+    background-color: #FFC107;
+    color: white;
+    padding: 10px 20px; /* Increased padding */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .revoke-btn {
+    background-color: #FF3737;
+    color: white;
+    padding: 10px 20px; /* Increased padding */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .view-referrals-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px; /* Increased padding */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* hover effects */
+  .view-btn:hover {
+    background-color: #3e8e41;
+  }
+
+  .update-btn:hover {
+    background-color: #ffa07a;
+  }
+
+  .revoke-btn:hover {
+    background-color: #ff6961;
+  }
+
+  .view-referrals-btn:hover {
+    background-color: #1a73e8;
+  }

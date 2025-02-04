@@ -1,0 +1,268 @@
+/* --------- CARDS ----------*/
+.main-cards {
+  display: grid;
+  grid-template-columns: 1.8fr 1.8fr 1.8fr;
+  gap: 5px;
+  margin: 20px 0;
+}
+.main-cards a{
+  text-decoration: none;
+}
+.main-title a{
+  color:  #0b1533;
+  text-decoration: none;
+}
+.main-container{
+  padding: 20px;
+  height: 600px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 35px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d3;
+  border-radius: 5px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.card:first-child {
+  border-left: 7px solid #34495E;
+}
+
+.card:nth-child(2) {
+  border-left: 7px solid  #149077; 
+}
+
+.card:nth-child(3) {
+  border-left: 7px solid #DA8C10;
+}
+
+.card:nth-child(4) {
+  border-left: 7px solid #2573A6;
+}
+
+.card:nth-child(5) {
+  border-left: 7px solid #CF4436;
+}
+
+.card:nth-child(6) {
+  border-left: 7px solid #59236e;
+}
+/* Define font colors */
+.text-primary {
+  color: #666666;
+}
+
+.text-gray{
+  color:#34495E ;
+}
+
+.text-green {
+  color:#149077; 
+}
+
+.text-orange {
+  color: #DA8C10;
+}
+
+.text-blue {
+  color:  #34495E;
+}
+
+.text-red {
+  color: #CF4436;
+}
+
+.text-violet{
+  color: #59236e;
+}
+
+/* Hover effect for text color */
+.card:hover .text-primary,
+.card:nth-child(1):hover .text-gray,
+.card:nth-child(2):hover .text-green,
+.card:nth-child(3):hover .text-orange,
+.card:nth-child(4):hover .text-blue,
+.card:nth-child(5):hover .text-red,
+.card:nth-child(6):hover .text-violet {
+  color: #fff;
+}
+
+/* Adjust hover effect to fill card background with border-left color */
+.card:nth-child(1):hover {
+  background-color: #34495E;
+}
+
+.card:nth-child(2):hover {
+  background-color: #149077;
+}
+
+.card:nth-child(3):hover {
+  background-color: #DA8C10;
+}
+
+.card:nth-child(4):hover {
+  background-color: #2573A6;
+}
+
+.card:nth-child(5):hover {
+  background-color: #CF4436;
+}
+
+.card:nth-child(6):hover {
+  background-color: #59236e;
+}
+
+
+
+.card > span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner > p {
+  font-size: 18px;
+}
+
+.card-inner > span {
+  font-size: 35px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.charts-card {
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 25px;
+  box-sizing: border-box;
+  -webkit-column-break-inside: avoid;
+  border: 1px solid #d2d2d3;
+  border-radius: 5px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Media Query for small screens */
+@media screen and (max-width: 768px) {
+  .main-cards {
+    gap: 10px; /* Reduce the gap between cards */
+    margin: 20px 0; /* Adjust margin */
+    max-height: 500px; /* Set max height */
+    overflow-y: auto; /* Add vertical scroll when content exceeds max height */
+  }
+
+  .card {
+    padding: 20px; /* Reduce padding for smaller cards */
+  }
+
+  .card-inner {
+    display: flex; /* Change display to flex */
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Justify content to the start */
+    gap: 10px; /* Add gap between items */
+  }
+
+  .card-inner > p {
+    font-size: 16px; /* Reduce font size for smaller screens */
+    margin-bottom: 10px; /* Adjust margin */
+    flex: 1; /* Allow paragraph to grow to fill remaining space */
+  }
+
+  .card-inner > span {
+    font-size: 24px; /* Reduce font size for smaller screens */
+  }
+
+  .card > span {
+    font-size: 18px; /* Reduce font size for smaller screens */
+  }
+}/* Media Query for small screens */
+@media screen and (max-width: 768px) {
+  .applications-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .search-bar {
+      display: flex;
+      align-items: center;
+  }
+
+  .search-bar input[type="text"] {
+      width: 200px; /* Adjust width as needed */
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+  }
+
+  .search-bar button {
+      padding: 8px;
+      border: none;
+      background-color: #f5f5f5;
+      cursor: pointer;
+  }
+
+  /* Remove top margin of the cards */
+  .card {
+      margin-top: 0;
+  }
+
+  /* Adjust table-container styles if necessary */
+  .table-container {
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 400px; /* Set max height as needed */
+  }
+}
+/* Media Query for small screens */
+@media screen and (max-width: 1090px) {
+  .main-cards {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Change to auto-fill with minmax */
+    gap: 10px; /* Reduce the gap between cards */
+    margin: 20px 0; /* Adjust margin */
+    max-height: 400px; /* Remove max height */
+    overflow-y: scroll; /* Remove vertical scroll */
+  }
+
+  .card {
+    padding: 20px; /* Reset padding for cards */
+  }
+
+  .card-inner {
+    gap: 10px; /* Add gap between items */
+  }
+
+  .card-inner > p {
+    font-size: 16px; /* Reset font size */
+    margin-bottom: 10px; /* Adjust margin */
+  }
+
+  .card-inner > span {
+    font-size: 24px; /* Reset font size */
+  }
+
+  .card > span {
+    font-size: 18px; /* Reset font size */
+  }
+}

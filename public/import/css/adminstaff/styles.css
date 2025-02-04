@@ -1,0 +1,1360 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --black-color: #171c26;
+  --black-color-light: hsl(220, 24%, 15%);
+  --black-color-lighten: hsl(220, 20%, 18%);
+  --white-color: #fff;
+  --body-color: #fff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+h1{
+  font-size: 35px;
+  font-weight: 900;
+  text-align: center;
+  color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+  h4 {
+    font-size: 15px; /* Adjust font size for smaller screens */
+    max-width: 80%; /* Adjust maximum width for smaller screens */
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.text{
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+}
+
+ul {
+  list-style: none;
+  /* Color highlighting when pressed on mobile devices */
+  /*-webkit-tap-highlight-color: transparent;*/
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1220px;
+  margin-inline: 1.5rem;
+
+}
+
+/*=============== MAIN BANNER ================*/
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .main-banner h2.title {
+    width: 80%; /* Adjust width for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-banner h2.title {
+    width: 90%; /* Adjust width for even smaller screens */
+    font-size: 14px; /* Further adjust font size for even smaller screens */
+  }
+}
+
+
+.main-banner .button-container {
+  position: relative;
+  z-index: 1; /* Ensure the buttons are below the text */
+  /* Other styles remain the same */
+}
+.main-banner .buttonlinks {
+  padding: 13px 25px;
+  margin: 5px;
+  background-color: #3498db;
+  color: rgb(255, 244, 244);
+  font-size: 13px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: .5px;
+  text-decoration: none;
+}
+.main-banner .buttonlinks:hover {
+  background-color:#05436d;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  transition: .2s ease-in-out;
+}
+
+@media screen and (max-width: 480px) {
+
+  .main-banner button {
+      font-size: 12px;
+  }
+}
+.nav__button {
+  text-decoration: none;
+   margin-top: 25px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color:#fff;
+    font-size: 14px;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    letter-spacing: .5px;
+}
+.nav__button a{
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.nav__button:hover {
+   background-color: #05436d;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  transition: .2s ease-in-out;
+}
+/*============== SEARCHBAR ===============*/
+.search-background {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  margin-top: 20px; /* Adjust margin for spacing */
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Set width to 100% for responsiveness */
+  height: 60px;
+  max-width: 400px; /* Limit maximum width */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+}
+
+.search-box i {
+  margin-right: 10px;
+}
+
+.search-box input[type="text"] {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+}
+
+
+/* Button styles */
+.searchbtn button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 30px; /* Adjust padding as needed */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition for smooth effect */
+  height: 60px; /* Adjust the height as needed */
+}
+
+/* Change button color on hover */
+.searchbtn button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 964px) {
+  .search-container {
+    margin-top: 0px; /* Adjust margin for spacing */
+  }
+
+  .search-box {
+    margin-top: 10px; /* Adjust margin for spacing */
+    width: 100%; /* Set width to 100% for smaller screens */
+    max-width: none; /* Remove max-width for smaller screens */
+  }
+
+  .searchbtn button {
+    margin-top: 10px; /* Adjust margin for spacing */
+    padding: 10px 20px; /* Adjust padding as needed */
+  }
+}
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .search-container {
+    margin-top: 0px; /* Adjust margin for spacing */
+  }
+
+  .search-box {
+    margin-top: 10px; /* Adjust margin for spacing */
+    width: 100%; /* Set width to 100% for smaller screens */
+    max-width: none; /* Remove max-width for smaller screens */
+  }
+
+  .searchbtn button {
+    margin-top: 10px; /* Adjust margin for spacing */
+    padding: 10px 20px; /* Adjust padding as needed */
+  }
+}
+
+
+/*=============== HEADER ===============*/
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black-color);
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  z-index: var(--z-fixed);
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
+}
+
+.nav__logo,
+.nav__burger,
+.nav__close {
+  color: var(--white-color);
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-weight: var(--font-semi-bold);
+  /* Color highlighting when pressed on mobile devices */
+  /*-webkit-tap-highlight-color: transparent;*/
+}
+
+.nav__logo i {
+  font-weight: initial;
+  font-size: 1.25rem;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.nav__burger,
+.nav__close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+  }
+  .nav__menu::-webkit-scrollbar {
+    width: 0;
+  }
+  .nav__list {
+    background-color: var(--black-color);
+    padding-top: 1rem;
+  }
+}
+
+.nav__link {
+  font-size: 15px;
+  color: var(--white-color);
+  background-color: var(--black-color);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color .3s;
+}
+
+.nav__link:hover {
+  background-color: var(--black-color-light);
+  color:#acacac;
+}
+
+/* Show menu */
+.show-menu {
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/*=============== DROPDOWN ===============*/
+.dropdown__item {
+  cursor: pointer;
+}
+
+.dropdown__arrow {
+  font-size: 1.25rem;
+  font-weight: initial;
+  transition: transform .4s;
+}
+
+.dropdown__link,
+.dropdown__sublink {
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  color: var(--white-color);
+  background-color: var(--black-color-light);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  transition: background-color .3s;
+}
+
+.dropdown__link i,
+.dropdown__sublink i {
+  font-size: 1.25rem;
+  font-weight: initial;
+}
+
+.dropdown__link:hover,
+.dropdown__sublink:hover {
+  background-color: var(--black-color);
+}
+
+.dropdown__menu,
+.dropdown__submenu {
+  font-size: 14px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease-out;
+}
+
+/* Show dropdown menu & submenu */
+.dropdown__item:hover .dropdown__menu,
+.dropdown__subitem:hover > .dropdown__submenu {
+  max-height: 1000px;
+  transition: max-height .4s ease-in;
+}
+
+/* Rotate dropdown icon */
+.dropdown__item:hover .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+/*=============== DROPDOWN SUBMENU ===============*/
+.dropdown__add {
+  margin-left: auto;
+}
+
+.dropdown__sublink {
+  background-color: var(--black-color-lighten);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .nav__link {
+    padding-inline: 1rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1118px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 2rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+  }
+  .nav__link:hover {
+    background-color: transparent;
+  }
+
+  .dropdown__item,
+  .dropdown__subitem {
+    position: relative;
+  }
+
+  .dropdown__menu,
+  .dropdown__submenu {
+    max-height: initial;
+    overflow: initial;
+    position: absolute;
+    left: 0;
+    top: 6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, top .3s;
+  }
+
+  .dropdown__link,
+  .dropdown__sublink {
+    padding-inline: 1rem 3.5rem;
+  }
+
+  .dropdown__subitem .dropdown__link {
+    padding-inline: 1rem;
+  }
+
+  .dropdown__submenu {
+    position: absolute;
+    left: 100%;
+    top: .5rem;
+  }
+
+  /* Show dropdown menu */
+  .dropdown__item:hover .dropdown__menu {
+    opacity: 1;
+    top: 5.5rem;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+
+  /* Show dropdown submenu */
+  .dropdown__subitem:hover > .dropdown__submenu {
+    opacity: 1;
+    top: 0;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+}
+
+.content {
+  padding-top: 50px; /* Adjust according to the height of your header */
+  /* This ensures that content doesn't get hidden behind the fixed header */
+}
+
+/* Set fixed width for sections */
+.section {
+  width: 1100px; /* Adjust width as needed */
+  height: 1000px;
+  margin: 40px auto; /* Center the sections horizontally */
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.section:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: column; /* Ensure elements are stacked vertically */
+  background-color: #333; /* Set footer background color */
+  color: #fff; /* Set text color */
+  padding: 30px; /* Add padding */
+}
+
+.footer-links a {
+  font-size: 14px;
+  margin-right: 10px; /* Add space between links */
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none; /* Remove underline */
+}
+
+.line {
+  border-top: 1px solid #fff; /* Add a white solid border on top of the row */
+  padding-top: 10px; /* Add padding to create space between the border and the content */
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the start of the row */
+}
+
+.column {
+  flex: 1; /* Each column takes equal width */
+  padding: 0 15px; /* Add spacing between columns */
+}
+
+.column h4 {
+  margin-bottom: 25px; /* Add margin below heading */
+}
+
+.column p {
+  margin-bottom: 20px; /* Add margin below paragraph */
+}
+
+
+.column p {
+  position: relative; /* Position relative for absolute pseudo-element */
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Add underline pseudo-element */
+.column p::before {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Position the pseudo-element below the text */
+  width: 0;
+  height: 2px; /* Set the height of the underline */
+  background-color: #fff; /* Color of the underline */
+  transition: width 0.3s ease; /* Add transition effect */
+}
+
+/* Adjust hover effect */
+.column p:hover::before {
+  width: calc(100% - 70%); /* Extend the width of the underline from 50% to 100% */
+  left: 0; /* Position the underline from the left edge */
+}
+
+
+p a {
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-links {
+  padding: 10px;
+  margin-top: 50px;
+}
+
+/* Footer link styles */
+.footer-links a {
+  position: relative; /* Position relative for absolute pseudo-element */
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Add underline pseudo-element */
+.footer-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Position the pseudo-element below the text */
+  left: 50%; /* Start from the middle */
+  width: 0;
+  height: 2px; /* Set the height of the underline */
+  background-color: #fff; /* Color of the underline */
+  transition: width 0.3s ease; /* Add transition effect */
+}
+
+/* Adjust hover effect */
+.footer-links a:hover::before {
+  width: calc(100% - 50%); /* Extend the width of the underline from 50% to 100% */
+  left: 0; /* Position the underline from the left edge */
+}
+
+
+.copyright {
+  padding: 10px;
+  margin-top: 50px; /* Add margin between footer links and copyright text */
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 768px) {
+  .row {
+    flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
+  }
+
+  .column {
+    flex: 1 0 50%; /* Each column takes 50% width */
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+
+  .footer-links,
+  .copyright {
+    width: 100%; /* Make footer links and copyright text full width */
+  }
+}
+
+
+
+
+
+    .box {
+width: 85%; /* Set width to 90% of the viewport width */
+max-width: 1200px; /* Set maximum width to 1200px */
+height: auto; /* Allow height to adjust based on content */
+background-color: #fff;
+border-radius: 5px;
+padding: 3%; /* Set padding to 3% of the width */
+margin: 10px auto;
+font-size: 1em; /* Default font size */
+line-height: 1.5;
+}
+
+/* Apply hover effect */
+.box:hover {
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+.box {
+  width: 95%; /* Adjust width for smaller screens */
+  padding: 4%; /* Adjust padding for smaller screens */
+  font-size: 0.9em; /* Adjust font size for smaller screens */
+}
+}
+
+@media screen and (max-width: 480px) {
+.box {
+  width: 95%; /* Adjust width for even smaller screens */
+  padding: 5%; /* Adjust padding for even smaller screens */
+  font-size: 0.8em; /* Adjust font size for even smaller screens */
+}
+}
+
+.textcontainer {
+text-align: center; /* Horizontally center text */
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+.text {
+  font-size: 16px; /* Adjust font size for smaller screens */
+  max-width: 80%; /* Adjust maximum width for smaller screens */
+}
+}
+
+@media screen and (max-width: 480px) {
+.text {
+  font-size: 14px; /* Further adjust font size for smaller screens */
+  max-width: 90%; /* Further adjust maximum width for smaller screens */
+}
+}
+
+.containercard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-content {
+  padding: 20px;
+  background-color: #fff; /* Add a background color */
+  transition: background-color 0.3s ease; /* Add transition for smooth effect */
+}
+
+.card:hover .card-content {
+  background-color: #3498db; /* Change background color on hover */
+  color: white;
+  transition: .2s ease-in-out;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 40px); /* Adjust card width for smaller screens */
+  }
+}
+/* Media query for responsiveness */
+@media screen and (max-width: 560px) {
+  .card {
+    width: calc(100% - 40px); /* Adjust card width for smaller screens */
+  }
+}
+/* Media query for responsiveness */
+@media screen and (max-width: 596px) {
+  .card {
+    width: calc(100% - 40px); /* Adjust card width for smaller screens */
+  }
+}
+@media screen and (max-width: 480px) {
+  .card {
+    width: calc(100% - 40px); /* Adjust card width for even smaller screens */
+  }
+}
+
+
+
+/*============== QUICK STATS ====================*/
+.quick-stats {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: flex-end; /* Align items at the bottom */
+  background-color: #f5f5f5;
+  padding: 70px;
+  border-radius: 10px;
+  width: 80%; /* Set width to 80% */
+  margin: 0 auto; /* Center the container */
+  margin-top: 40px; /* Add margin-top */
+  gap: 10px; /* Add space between stat elements */
+}
+
+.stat {
+  flex: 1; /* Equal width for all stats */
+  text-align: center;
+}
+
+.stat i {
+  color: #3498db; /* Set icon color */
+  font-size: 28px; /* Adjust icon size */
+  margin-bottom: 5px; /* Add margin below the icon */
+}
+
+.stat-value {
+  color:  rgb(0, 6, 95);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #888;
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .quick-stats {
+      flex-direction: column; /* Display stats in a column */
+      align-items: center; /* Center items vertically */
+  }
+
+  .stat {
+    margin: 10px; /* Add margin between stats */
+}
+}
+
+/*============== END QUICK STATS ====================*/
+
+
+
+
+/* Dropdown container */
+.dropdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* Dropdown button */
+.dropdown-btn {
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-btn .icon {
+  text-align: right;
+}
+/* Dropdown content */
+.dropdown-sort {
+  font-size: 13px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Dropdown links */
+.dropdown-sort a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-sort a:hover {
+  background-color: #ddd;
+}
+/* Media queries for responsiveness */
+@media screen and (max-width: 968px) {
+  .dropdown-btn {
+    margin-top: 5px;
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+  }
+}
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .dropdown-btn {
+    margin-top: 5px;
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dropdown-btn {
+    padding: 8px 16px; /* Further adjust padding for even smaller screens */
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+}
+.jobsearch-container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%; /* Set maximum width to 100% */
+  overflow-x: auto; /* Add horizontal scroll for smaller screens */
+}
+
+/* Table styles */
+table {
+  /* Your table styles here */
+  width: 100%; /* Make table fill container's width */
+  max-width: 100%; /* Set maximum width to 100% */
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+.job-row {
+  display: flex;
+  justify-content: center; /* Center the boxes horizontally */
+  flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+  margin-bottom: 10px; /* Add margin between rows */
+}
+
+.job-box {
+  width: 44%; /* Set width of each box */
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 15px;
+  box-sizing: border-box; /* Include padding and border in the width */
+  padding: 15px;
+}
+
+.job-cell {
+  padding: 10px;
+}
+.job-cell a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+  transition: color 0.2s ease; /* Add transition for color change */
+}
+
+.job-cell a:hover {
+  color: #3498db; /* Change text color on hover */
+}
+
+.job-icon {
+  font-size: 24px;
+  color: #3498db;
+}
+
+.job-details {
+  text-align: left;
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .job-box {
+      width: 100%; /* Set width to 100% for one box per row on smaller screens */
+  }
+}
+
+
+
+
+  /* Job box styles */
+  .container_company {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box {
+    width: calc(25% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+
+}
+
+.box a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.box img {
+    width: 50%;
+    border-radius: 5px;
+}
+
+.box h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.rating {
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .box {
+        width: calc(50% - 20px);
+        margin-bottom: 20px; /* Add margin between boxes */
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 100%;
+        margin-bottom: 20px; /* Add margin between boxes */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.company, .location, .salary, .attainment {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+.salary1{
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+.description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.job-apply {
+  text-align: right;
+}
+
+.apply-button {
+  padding: 5px 12px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.apply-button:hover {
+  background-color: #2980b9;
+}
+.apply-button2 {
+  padding: 15px 15px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.apply-button2:hover {
+  background-color: #2980b9;
+}
+
+/* SEARCH JOB CSS */
+/* Base styles */
+.padding-container {
+  width: 80%; /* Adjust width as needed */
+  margin: 40px auto; /* Center the container and add margin to the top */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.padding-content {
+  margin: 30px auto;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically */
+  background-color: #ffffff; /* Just for visualization */
+  padding: 30px; /* Add padding to the content */
+  box-sizing: border-box; /* Include padding and border in the width */
+  box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.3); /* Add shadow */
+}
+
+.image-container {
+  padding-right: 20px; /* Add spacing between the image and text */
+}
+
+.left-image {
+  width: 100px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border: 1px solid #ccc; /* Add border to the image */
+}
+
+.job-info {
+  flex: 1; /* Allow the job info to take up remaining space */
+}
+
+.location-salary {
+  display: flex; /* Use flexbox */
+}
+
+.company {
+  margin-top: 10px;
+}
+
+.location,
+.salary, .attainment {
+  margin-top: 10px; /* Add margin between each element */
+}
+.salary1 {
+  margin-top: 10px; /* Add margin between each element */
+}
+
+
+.salary1, .attainment {
+  margin-left: 20px; /* Add space between location and salary */
+}
+
+.apply-button {
+  margin-right: 20px; /* Add margin to the right of the button */
+  padding: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .padding-container {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .padding-content {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .image-container {
+    padding-right: 0; /* Remove padding on smaller screens */
+    margin-bottom: 20px; /* Add margin to the bottom */
+    text-align: center; /* Center the image */
+  }
+
+  .apply-button {
+    display: inline-block; /* Hide the button on smaller screens */
+  }
+
+  .job-info {
+    text-align: left; /* Align the text to the left */
+  }
+}
+.row-padding {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+  justify-content: space-between; /* Adjust spacing between columns */
+  margin-top: 10px; /* Add margin to the top */
+}
+
+.column-padding,
+.column-padding2 {
+  box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.3); /* Add shadow */
+  flex: 1; /* Make columns equal width initially */
+  padding: 20px 10px; /* Adjust padding as needed */
+  background-color: #ffffff; /* Just for visualization */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.column-padding h3, .column-padding2 h3 {
+  color: #2980b9;
+  flex: 1; /* Allow the h3 to take up remaining space */
+  padding: 0px 20px; /* Adjust padding as needed */
+}
+.column-padding2 h3:hover{
+  text-decoration: underline;
+}
+.column-padding h3::after {
+  content: '';
+  display: block;
+  width: 100%; /* Adjust the width of the underline */
+  height: 1px; /* Adjust the height of the underline */
+  background-color: #a7a7a7; /* Adjust the color of the underline */
+  margin-top: 5px; /* Adjust the spacing between the h3 and the underline */
+}
+
+.column-padding p, .column-padding2 p {
+  margin-top: 10px;
+  padding: 0px 20px; /* Adjust padding as needed */
+}
+
+.column-padding {
+  display: flex; /* Ensure the container is displayed as flex */
+  flex-direction: column; /* Stack elements vertically */
+  flex-basis: 66%; /* Initial width of the first padding */
+}
+
+.column-padding2 {
+  height: fit-content;
+  flex-basis: 32%; /* Initial width of the second padding */
+  margin-left: 20px; /* Add margin to separate the paddings */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .column-padding,
+  .column-padding2 {
+    flex-basis: 100%; /* Make each padding take full width on smaller screens */
+    margin-left: 0; /* Remove margin between paddings on smaller screens */
+    margin-top: 10px; /* Add margin to separate rows */
+  }
+}
+/* Media query for smaller screens */
+@media (max-width: 1136px) {
+  .column-padding2 {
+    flex-basis: 100%; /* Adjust width to take full width on smaller screens */
+    margin-left: 0; /* Remove margin on smaller screens */
+    margin-top: 10px; /* Add margin to separate rows */
+  }
+}
+.bullet-list {
+  padding: 20px;
+  line-height: 20px;
+}
+
+.bullet-list ul {
+  list-style-type: disc; /* Set bullet style */
+  margin-left: 20px; /* Add margin to align bullets */
+}
+
+.bullet-list li {
+  margin-bottom: 5px; /* Add spacing between list items */
+}
+
+
+
+
+
+/*============== JOBSEARCH BUTTONS ====================*/
+.job-info button {
+  /* Button styles */
+  padding: 5px 15px;
+  background-color: #babbbb;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+}
+.job-info a{
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none; /* Remove underline */
+}
+.job-button {
+  margin-left: 5px;
+  padding: 8px 14px;
+  background-color: #babbbb;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 968px) {
+  .job-button {
+    margin-top: 5px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .job-info button {
+    display: block;
+    margin: 0 auto;
+}
+}
+
+@media screen and (max-width: 576px) {
+  .job-button {
+    margin-top: 5px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  .job-info button {
+    display: block;
+    margin: 0 auto;
+}
+}
+
+/* staff Add buttons */
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left-buttons {
+    display: flex;
+  }
+
+  .left-buttons .btn {
+    margin-right: 10px; /* add some space between buttons */
+  }
+
+  .button-container .btn {
+    /* add some basic styling to the buttons */
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .button-container .btn:hover {
+    background-color: #3e8e41;
+  }

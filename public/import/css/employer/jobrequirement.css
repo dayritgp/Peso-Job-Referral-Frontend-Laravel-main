@@ -1,0 +1,380 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --black-color: #171c26;
+  --black-color-light: hsl(220, 24%, 15%);
+  --black-color-lighten: hsl(220, 20%, 18%);
+  --white-color: #fff;
+  --body-color: #fff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    --body-font: "Montserrat", sans-serif;
+}
+
+.requirementstitle {
+    width: 70%; /* Adjust width as needed */
+    margin: 40px auto; /* Center the container and add margin to the top */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.containerrequirements {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Make sidebar and content stretch vertically */
+    height: 100vh;
+    overflow-x: auto;
+}
+
+.sidebar {
+    border-radius: 10px;
+    width: 235px;
+    background-color: #333;
+    color: #fff;
+    overflow-y: auto;
+    height: 92%; /* Set sidebar height to 100% */
+}
+
+.content {
+    max-width: 700px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    flex: 1;
+    margin-top: -50px;
+    height: 100%; /* Set content height to 100% */
+}
+
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a.active {
+    font-weight: bold;
+    background-color: #555;
+}
+
+.message-container{
+  display: flex;
+	margin: 20px;
+	background-color: rgb(213, 237, 255);
+	padding: 10px;
+  border-radius: 10px;
+}
+
+.message-icon{
+  color: #010c84; /* Set icon color */
+  font-size: 38px; /* Adjust icon size */
+
+	padding: 15px 30px 15px 30px;
+}
+
+.message-info{
+	padding: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .content {
+        max-width: 100%; /* Set max-width to 100% on smaller screens */
+        overflow-x: auto; /* Add horizontal scrolling */
+    }
+	.message-container{
+		max-width:100%;
+	}
+
+}
+
+
+.content-item h2 {
+    color: #fff;
+    position: sticky;
+    top: 0;
+    background-color:#6b6b6b; /* Adjust as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-bottom: 1px solid #ccc; /* Optional: Add a bottom border for separation */
+    margin-top: 10; /* Ensure no gap between the heading and the content above */
+    border-radius: 5px 5px 0 0;
+}
+/* Target the first sidebar item */
+.sidebar a:first-child {
+    margin-top: 20px;
+}
+
+
+
+/* Form field container */
+.form-field {
+    margin: 20px auto;
+    margin-left: 40px; /* Add left margin */
+    margin-right: 20px; /* Add right margin */
+}
+
+/* Label */
+.form-field label {
+    display: block; /* Ensure labels are displayed as block elements */
+    margin-bottom: 5px; /* Add spacing between labels and inputs */
+}
+
+.label-radio{
+	display: flex;
+	flex-direction: row;
+	width: 55%; /* Adjust width to 100% */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.label-radio label{
+	margin-right:15px;
+
+}
+.label-radio label, input[type ="radio"]{
+	margin-right:15px;
+	border: 1px solid rgb(120, 161, 215);
+	padding: 10px;
+	border-radius: 10px;
+	background: white
+}
+.label-radio label:hover{
+    background:#dee8f7;
+
+}
+.label-radio2{
+	display: block;
+	margin-left: 10px;
+}
+
+
+
+/* Text input */
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field input[type="email"] ,
+.form-field input[type="cellphone-number"],
+.form-field input[type="password"]{
+    width: 70%; /* Adjust width to 100% */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+
+/* Select input */
+.form-field select {
+    width: 100%; /* Adjust width to 100% */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Input with icon container */
+.input-with-icon {
+    position: relative;
+}
+
+/* Icon */
+.input-with-icon i {
+    position: absolute;
+    left: 10px; /* Adjust the left position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+/* Text input */
+.input-with-icon input[type="text"],
+.form-field select,
+.input-with-icon input[type="text"] {
+    width: calc(40% - 22px); /* Adjust width as needed */
+    padding: 12px;
+    padding-left: 30px; /* Leave space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .form-field {
+        margin-left: 10px; /* Adjust left margin for smaller screens */
+        margin-right: 10px; /* Adjust right margin for smaller screens */
+    }
+    .form-field select {
+        width: calc(100% - 16px); /* Set back to original width on larger screens */
+    }
+    .form-field input[type="text"] {
+        width: calc(100% - 16px); /* Adjust width for smaller screens */
+    }
+}
+
+
+/* Label for upload and choose file */
+.upload-label, .file-button {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* Input with icon container */
+.input-with-icon {
+    position: relative;
+}
+
+/* Icon */
+.input-with-icon i {
+    position: absolute;
+    left: 10px; /* Adjust the left position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .form-field {
+        margin-left: 10px; /* Adjust left margin for smaller screens */
+        margin-right: 10px; /* Adjust right margin for smaller screens */
+    }
+}
+
+/* Style for file button and text */
+.file-button {
+    width: 300px;
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #848484;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.file-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 999px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file-button span {
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ #div-public{
+	  display: none;
+  }
+#div-private{
+	  display: none;
+  }
+  /* Profile box container */
+.profile-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Adjusted padding for spacing */
+  border-radius: 8px; /* Add border radius for rounded corners */
+}
+
+  /* Profile information */
+  .profile-info {
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Align items vertically */
+  }
+
+  /* Profile image */
+  .profile-image {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    border-radius: 50%; /* Make the image round */
+    margin-right: 10px; /* Spacing between image and name */
+  }
+
+
+  /* Dropdown content */
+  .dropdown-content {
+    position: absolute;
+    top: calc(100% + 0px); /* Position below the profile box with some spacing */
+    left: 0; /* Align with the right edge of the profile box */
+    right: 0;
+    background-color: var(--black-color);
+    min-width: 160px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: var(--z-fixed); /* Ensure the dropdown appears above other content */
+    display: none; /* Hide dropdown by default */
+  }
+
+  /* Show dropdown content on hover */
+  .profile-box:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Dropdown links */
+  .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--white-color); /* Match the header text color */
+  }
+
+  /* Style the dropdown links on hover */
+  .profile-box a:hover {
+    background-color: var(--black-color-light); /* Match the hover background color of the nav links */
+  }
+
+  .register_submit {
+    margin-top: 2%;
+    margin-left: 81%;
+    width: 90px;
+    padding: 8px 16px;
+    background-color: #3870d2;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
